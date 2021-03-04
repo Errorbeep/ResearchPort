@@ -1,6 +1,6 @@
 # ResearchPort
 科研管理系统
-a research management system developed with Django
+a basic research management system developed with Django
 
 ### 技术栈
 + Python3/Django
