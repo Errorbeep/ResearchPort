@@ -1,0 +1,124 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %}
+科研管理系统
+{% endblock %}
+
+
+{#传输给index的content部分#}
+{% block content %}
+<div class="jumbotron text-center" style="margin-bottom:0; background-image: url(https://tva1.sinaimg.cn/large/007Tv3Vmly1gmmig3pat8j31hc0u011q.jpg)">
+
+  <h1 class="welco">Welcome! Start your research.</h1>
+  <p class="intro"></p>
+    {% if user.is_authenticated %}
+    <button type="button" class="btn btn-success"><a href="{% url 'manage' %}">进入系统</a></button>
+    {% else %}
+    <button type="button" class="btn btn-success"><a href="{% url 'userLogin' %}">进入系统</a></button>
+    {% endif %}
+    <button type="button" class="btn btn-default"><a href="{% url 'userRegister' %}">注册</a></button>
+</div>
+
+    {#循环打印出论文的表格#}
+    <div class="row">
+        {#<div class="text-center"> 用来将表格中数据居中对齐#}
+
+        <div class="col-md-1 column">
+        </div>
+        <div class="col-md-10 column">
+            <table class="table">
+                <h1 class="text-center">科研论文</h1>
+                <thead>
+                <tr>
+                    <th>论文名称</th>
+                    <th>第一作者</th>
+                    <th>所属机构</th>
+                    <th>检索级别</th></tr>
+                </thead>
+                <tbody>
+                {% for article in articles %}
+                    <tr class="active">
+                        <td><a href="{{ article.id }}">{{ article.Rtitle }}</a></td>
+                        <td>{{ article.Rauthor }}</td>
+                        <td>{{ article.Rinstitution }}</td>
+                        <td>{{ article.Rrank }}</td></tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-1 column">
+        </div>
+        {#</div>#}
+    </div>
+
+    <div class="row">
+    {#<div class="text-center"> 用来将表格中数据居中对齐#}
+
+    <div class="col-md-1 column">
+    </div>
+    <div class="col-md-10 column">
+        <table class="table">
+            <h1 class="text-center">科研项目</h1>
+            <thead>
+            <tr>
+                <th>论文名称</th>
+                <th>检索类型</th>
+                <th>第一作者</th>
+                <th>委托结构</th></tr>
+            </thead>
+            <tbody>
+            {% for project in projects %}
+                <tr class="active">
+                    <td><a href="project/{{ project.id }}">{{project.proj_name}}</a></td>
+                    <td>{{project.proj_type}}</td>
+                    <td>{{project.charge_man}}</td>
+                    <td>{{project.delegated_dept}}</td></tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-1 column">
+    </div>
+    {#</div>#}
+
+    <div class="row clearfix" style="margin-top: 500px;">
+        <h1 class="text-center">系统特色</h1>
+	    <div class="col-md-4 column text-center">
+            <img src="https://tva1.sinaimg.cn/large/007Tv3Vmly1gmd9o8v1eij31hc0u0ths.jpg" width="300px" height="100px" class="img-responsive center-block img-rounded">
+				<div class="caption">
+					<h3>
+                        方便快捷
+					</h3>
+					<p>
+                        提高您的项目管理效率
+					</p>
+                </div>
+		</div>
+		<div class="col-md-4 column text-center">
+            <img src="https://tva1.sinaimg.cn/large/007Tv3Vmly1gmgqd9n9u3j31hc0u0gtm.jpg" width="300px" height="100px" class="img-responsive center-block img-rounded">
+				<div class="caption">
+					<h3>
+                        功能齐全
+					</h3>
+					<p>
+                        适合各类高校，研究机构
+					</p>
+				</div>
+		</div>
+		<div class="col-md-4 column text-center">
+            <img src="https://tva1.sinaimg.cn/large/007Tv3Vmgy1gma7ua9934j31hc0u0ai6.jpg" width="300px" height="100px" class="img-responsive center-block img-rounded">
+				<div class="caption">
+					<h3>
+                        界面友好
+					</h3>
+					<p>
+                        你的系统更懂你
+					</p>
+				</div>
+		</div>
+	</div>
+{% endblock %}

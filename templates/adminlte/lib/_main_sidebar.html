@@ -1,0 +1,113 @@
+{% extends 'adminlte/lib/_main_sidebar.html' %}
+
+{% block logo_text %}<b>科研管理系统{% endblock %}
+
+{% block nav_links %}
+    <li class="nav-item">
+        <a href="/manage" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+                主页
+                <span class="right badge badge-danger">New</span>
+            </p>
+        </a>
+    </li>
+    <li class="nav-item has-treeview">
+        <a href="/manage/Research/" class="nav-link">
+            <i class="nav-icon far fa-edit"></i>
+            <p>
+                科研管理
+                <i class="fas fa-angle-left right"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="/manage/Research/projects/" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>横向项目管理</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>纵向项目管理</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/manage/Research/researcharticles/" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>论文管理</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>专著管理</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>鉴定管理</p>
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+            <i class="nav-icon far fa-plus-square"></i>
+            <p>
+                认证和授权
+                <i class="fas fa-angle-left right"></i>
+            </p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="/manage/auth/user/" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>用户管理</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/manage/auth/group/" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>组管理</p>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-tree"></i>
+            <p>
+                获奖管理
+                <span class="right badge badge-danger">New</span>
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-book"></i>
+            <p>
+                专家管理
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-chart-pie"></i>
+            <p>
+                统计查询
+            </p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+                转储管理
+            </p>
+        </a>
+    </li>
+{% endblock nav_links %}

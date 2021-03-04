@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %}
+    详情页
+{% endblock %}
+
+{% block content %}
+    <h1>{{ project.proj_name }}</h1>
+    <h4>{{ project.charge_man }}</h4>
+    <hr>
+    <p>{{project.proj_intro}}</p>
+{% endblock %}
